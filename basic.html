@@ -1,0 +1,70 @@
+<head>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+<div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+<script>
+    <!-- JAVASCRIPT CODE GOES HERE -->
+
+    var data = {
+        type: "sankey",
+        orientation: "h",
+        valueformat: ".2",
+        valuesuffix: " students",
+        node: {
+            pad: 40,
+            thickness: 30,
+            line: {
+                color: "black",
+                width: 0.5
+            },
+            label: ['Bus Law year2 q1',
+                'Intl Law year2 q1',
+                'Public Policy year2 q1',
+                'Bus Law year2 q2 ',
+                'Intl Law year2 q2 ',
+                'Public Policy year2 q2 ',
+                'Bus Law year2 q3',
+                'Intl Law year2 q3',
+                'Public Policy year2 q3'],
+            color: ["blue", "pink", "yellow", "blue", "pink", "yellow", "blue", "pink", "yellow"]
+        },
+
+        link: {
+            source: [0,
+                1,
+                2,
+                3,
+                4,
+                5],
+            target: [3,
+                4,
+                5,
+                6,
+                7,
+                8],
+            value: [12,
+                8,
+                20,
+                26,
+                1,
+                13]
+        }
+    }
+
+    var data = [data]
+
+    var layout = {
+        title: "Basic Sankey",
+        font: {
+            size: 10
+        }
+    }
+
+
+    Plotly.react('myDiv', data, layout)
+</script>
+</body>
